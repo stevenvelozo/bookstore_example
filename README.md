@@ -20,9 +20,13 @@ You need to make sure the IP, port, user and password are all correct.
 
 From the `api/` folder, run `npm install`.  Make sure to user node version 8.
 
-## Run the database generation scripts.
+## Run the Stricture database description generation scripts.
 
 You can run `Build-Database.sh` from the `api/` folder and everything will generate properly
+
+## Create the Database Tables
+
+From your favorite MySQL client, connect to the server you are already running on your computer.  Load up the file stricture generated in `api/model/sql_create/BookStore-CreateDatabase.mysql.sql` and execute it against your database.  This will create all the empty tables you need.
 
 ## Run the API server
 
