@@ -24,7 +24,7 @@
 	"MySQL":
 		{
 			"Server": "127.0.0.1",
-			"Port": 32768,
+			"Port": 3306,
 			"User": "root",
 			"Password": "123456789",
 			"Database": "bookstore",
