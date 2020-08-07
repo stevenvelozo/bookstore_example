@@ -39,14 +39,14 @@ _Fable.MeadowMySQLConnectionPool = libMySQL.createPool
 
 // Create DAL objects
 let _DAL = {};
-const _BookStoreModel = require (__dirname+'/../model/build/Stricture_Output.json');
+const _BookStoreModel = require (__dirname+'/model/json_schema/BookStore-Extended.json');
 const _BookStoreTableList = Object.keys(_BookStoreModel.Tables);
 _Fable.log.info(`...Creating ${_BookStoreTableList.length} DAL entries...`);
 for (let i = 0; i < _BookStoreTableList.length; i++)
 {
 	let tmpDALEntityName = _BookStoreTableList[i];
 	_Fable.log.info(`   -> Creating the ${tmpDALEntityName} DAL...`);
-	_DAL[tmpDALEntityName] = _Meadow.loadFromPackage(__dirname+'/../model/build/Stricture_Output'+tmpDALEntityName+'.json');
+	_DAL[tmpDALEntityName] = _Meadow.loadFromPackage(__dirname+'/model/meadow_schema/BookStore-MeadowSchema-'+tmpDALEntityName+'.json');
 	_DAL[tmpDALEntityName].setProvider('MySQL');
 	_DAL[tmpDALEntityName].setIDUser(99999);
 }
